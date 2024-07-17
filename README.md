@@ -10,3 +10,5 @@ If your social media feeds are anything like mine, you undoubtedly get posts sto
 - ffmpeg
 
 Note: ffmpeg is a command line interface.
+
+Check out on my [website](https://marcbrewer.net/projects/slop-machine/).
