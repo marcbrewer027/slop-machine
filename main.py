@@ -136,15 +136,13 @@ if __name__ == "__main__":
 
     current = text_to_speech(post['title'].replace("AITA", "am I the asshole"), ".", "0")
 
-    captions.append(Subtitle(current['filename'], 1, post['title'], copy.copy(totalLength), copy.copy(totalLength.add(current  
-['duration']))))
+    captions.append(Subtitle(current['filename'], 1, post['title'], copy.copy(totalLength), copy.copy(totalLength.add(current['duration']))))
     g.write(f"file '{current['filename']}'\n")  
 
     current = text_to_speech(f"from {post['author']} on reddit", ".", "1")
     g.write(f"file '{current['filename']}'\n") 
 
-    captions.append(Subtitle(current['filename'], 2, f"from {post['author']} on reddit", copy.copy(totalLength), copy.copy 
-(totalLength.add(current['duration']))))
+    captions.append(Subtitle(current['filename'], 2, f"from {post['author']} on reddit", copy.copy(totalLength), copy.copy(totalLength.add(current['duration']))))
 
     n=2
     for sentence in bodySentences:
@@ -152,8 +150,7 @@ if __name__ == "__main__":
         try:
             current = text_to_speech(sentence.replace("AITA", "am I the asshole"), ".", f"{n}")
             g.write(f"file '{current['filename']}'\n")
-            captions.append(Subtitle(current['filename'], n+1, sentence+".", copy.copy(totalLength), copy.copy(totalLength.add 
-        (current['duration']))))
+            captions.append(Subtitle(current['filename'], n+1, sentence+".", copy.copy(totalLength), copy.copy(totalLength.add(current['duration']))))
         
             n += 1
         except Exception as e:
